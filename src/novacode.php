@@ -1,6 +1,5 @@
- <?php
-
-public function findAndHighlightMyCode($bodyx){
+<?php
+  function findAndHighlightMyCode($body){
 
                 if(strpos($body, ":start")){
                     $close = preg_replace('/:[end]+/', '</code></pre>', $body);
@@ -28,7 +27,7 @@ public function findAndHighlightMyCode($bodyx){
                     else if(strpos($body, ":startruby")){
                         $Tag = preg_replace('/:[startpython]+/', '<pre class="language-ruby"><code>', $close);
                     }
-                    
+
                     $new = explode('#',$Tag);
                     return $new;
 
@@ -39,6 +38,7 @@ public function findAndHighlightMyCode($bodyx){
                 }
 
                 }
+
 
 
 
